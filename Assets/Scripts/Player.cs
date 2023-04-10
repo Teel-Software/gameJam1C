@@ -14,8 +14,16 @@ public class Player : MonoBehaviour
     Vector2 movement;
 
     // Update is called once per frame
-    void Update() {
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+    void Update()
+    {
+        var x = Input.GetAxisRaw("Horizontal");
+        var y = Input.GetAxisRaw("Vertical");
+        
+        if ((x != 0 ^ y != 0) || 
+            (x == 0 && y == 0))
+            movement = new Vector2(x, y).normalized;
+
+            
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
