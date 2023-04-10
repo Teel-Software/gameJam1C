@@ -3,7 +3,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
+    Vector2 movement;
     public Rigidbody2D rb;
+    public Transform tank;
     public Animator animator;
 
     void Awake()
@@ -12,21 +14,29 @@ public class Player : MonoBehaviour
         //animator.SetFloat("TurnSide", 0);
     }
 
-    Vector2 movement;
+    
     //float turnSide;
 
     void Update() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        //GetSideToTurn();
-
-        // if (!Input.anyKeyDown){
-        //     animator.SetFloat("TurnSide", turnSide);
-        // }
+        if(Input.GetKey(KeyCode.W))
+		{
+			tank.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+		}
+		else if(Input.GetKey(KeyCode.S))
+		{
+			tank.localRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+		}
+		else if(Input.GetKey(KeyCode.A))
+		{
+			tank.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
+		}
+		else if(Input.GetKey(KeyCode.D))
+		{
+			tank.localRotation = Quaternion.Euler(new Vector3(0, 0, -90));
+		}
     }
 
     private void FixedUpdate() {

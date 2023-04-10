@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 44428856}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,11 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 44428854}
+  tank: {fileID: 44428853}
   animator: {fileID: 44428855}
-  up: {fileID: 518705556, guid: 7e43b15f98a2cb74a87cb822cf1426d0, type: 3}
-  left: {fileID: 925808562, guid: 7e43b15f98a2cb74a87cb822cf1426d0, type: 3}
-  right: {fileID: -757542746, guid: 7e43b15f98a2cb74a87cb822cf1426d0, type: 3}
-  down: {fileID: -194164940, guid: 7e43b15f98a2cb74a87cb822cf1426d0, type: 3}
 --- !u!212 &44428852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -231,6 +228,7 @@ Transform:
   - {fileID: 2132251488}
   - {fileID: 1153816902}
   - {fileID: 1228328883}
+  - {fileID: 511608175}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -284,7 +282,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 44428849}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2e89cd4dc7738d7478a25eb663ab568c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -313,7 +311,7 @@ GameObject:
   - component: {fileID: 101980784}
   m_Layer: 0
   m_Name: BottomBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2539,6 +2537,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &511608174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511608175}
+  - component: {fileID: 511608176}
+  m_Layer: 6
+  m_Name: gunPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511608175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511608174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.034, y: 0.404, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 44428853}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511608176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511608174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a628d75a50bf7849a31c6907cc3baf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 8707804456613172304, guid: bab0d3ff80a311b45993d2344c8208f5, type: 3}
+  gunPosition: {fileID: 511608175}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,7 +2679,7 @@ GameObject:
   - component: {fileID: 562285327}
   m_Layer: 0
   m_Name: RightBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2916,7 +2960,7 @@ GameObject:
   - component: {fileID: 1007403009}
   m_Layer: 0
   m_Name: UpBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4837,7 +4881,7 @@ GameObject:
   - component: {fileID: 1428229589}
   m_Layer: 0
   m_Name: LeftBorder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4897,7 +4941,7 @@ GameObject:
   - component: {fileID: 1461695322}
   m_Layer: 0
   m_Name: Metal
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5373,7 +5417,7 @@ GameObject:
   - component: {fileID: 1853801389}
   m_Layer: 0
   m_Name: Bricks
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
