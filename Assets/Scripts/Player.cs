@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public readonly TankType type = TankType.Player;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
 
-
+    private void OnEnable() {
+        
+    }
 
     Vector2 movement;
 
