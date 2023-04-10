@@ -1,0 +1,6 @@
+TankType;Player;Standart;Fast;Armored
+Speed;2;2;4;1
+Health;1;1;1;3
+Number of shots;1;1;1;1
+Shot speed;4;4;4;4
+Damage;1;1;1;1
